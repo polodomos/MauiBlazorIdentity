@@ -1,0 +1,63 @@
+@page "/profile"
+@using MauiBlazorIdentity.Shared.Services
+@using MauiBlazorIdentity.Shared.Models
+@attribute [Microsoft.AspNetCore.Authorization.Authorize]
+@inject IAuthService AuthService
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Profil Utilisateur</h3>
+                </div>
+                <div class="card-body">
+                    @if (currentUser != null)
+                    {
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Nom complet</label>
+                            <p class="form-control-plaintext">@currentUser.FullName</p>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Email</label>
+                            <p class="form-control-plaintext">@currentUser.Email</p>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Nom d'utilisateur</label>
+                            <p class="form-control-plaintext">@currentUser.UserName</p>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Compte créé le</label>
+                            <p class="form-control-plaintext">@currentUser.CreatedAt.ToString("dd/MM/yyyy HH:mm")</p>
+                        </div>
+                        
+                        <button class="btn btn-danger" @onclick="HandleLogout">
+                            Se déconnecter
+                        </button>
+                    }
+                    else
+                    {
+                        <p>Chargement...</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private ApplicationUser? currentUser;
+
+    protected override async Task OnInitializedAsync()
+    {
+        currentUser = await AuthService.GetCurrentUserAsync();
+    }
+
+    private async Task HandleLogout()
+    {
+        await AuthService.LogoutAsync();
+    }
+}

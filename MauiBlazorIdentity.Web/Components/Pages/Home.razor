@@ -1,0 +1,23 @@
+﻿@page "/"
+@attribute [Microsoft.AspNetCore.Authorization.Authorize]
+
+<PageTitle>Accueil</PageTitle>
+
+<h1>Bienvenue sur l'application MAUI Blazor avec Identity!</h1>
+
+<AuthorizeView>
+    <Authorized>
+        <div class="alert alert-success mt-4">
+            <h4>Vous êtes connecté!</h4>
+            <p>Utilisateur: <strong>@context.User.Identity?.Name</strong></p>
+            <p>Cette application démontre l'authentification ASP.NET Core Identity fonctionnant à la fois sur:</p>
+            <ul>
+                <li>✅ Application Web Blazor (navigateur)</li>
+                <li>✅ Application MAUI Blazor Hybrid (Windows, Android, iOS, macOS)</li>
+            </ul>
+            <div class="mt-3">
+                <a href="/profile" class="btn btn-primary">Voir mon profil</a>
+            </div>
+        </div>
+    </Authorized>
+</AuthorizeView>
