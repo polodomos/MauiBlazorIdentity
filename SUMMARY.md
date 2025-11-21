@@ -1,4 +1,4 @@
-# ✅ Application MAUI Blazor Identity - Résumé de la Création
+# ✅ Application MAUI Blazor Identity - Résumé de la Création - modifié le 21 novembre 2025 pour VS Toolbox 
 
 ## 🎉 Félicitations !
 
