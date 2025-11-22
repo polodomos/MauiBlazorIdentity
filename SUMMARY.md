@@ -1,6 +1,6 @@
-# ✅ Application MAUI Blazor Identity - Résumé de la Création
+# ✅ Application MAUI Blazor Identity - Résumé de la Création - modifié le 21 novembre 2025 pour VS Toolbox 
 
-## 🎉 Félicitations !
+## 🎉 Félicitations ! - on travaille bien - 21 novembre - 17:38 
 
 Votre application MAUI Blazor Hybrid et Web avec authentification Identity a été créée avec succès !
 
