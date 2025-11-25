@@ -1,5 +1,5 @@
 # Application MAUI Blazor Hybrid et Web avec ASP.NET Core Identity
-# # .NET 10 | Blazor | MAUI | Identity | SQLite - modifié le 21 novembre 2025
+# # .NET 10 | Blazor | MAUI | Identity | SQLite - modifié le 24 novembre 2025
 
 Cette solution démontre une application .NET 10 complète avec authentification Identity fonctionnant à la fois sur:
 - **Application Web Blazor** (navigateur)
